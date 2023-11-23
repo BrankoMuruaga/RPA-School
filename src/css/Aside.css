@@ -1,0 +1,32 @@
+.aside {
+  width: 200px;
+  height: 100vh;
+  background-color: #333;
+  color: #fff;
+  overflow-x: hidden;
+  transition: width 0.3s;
+  text-align: left; /* Alinea el texto a la izquierda por defecto */
+}
+
+.aside.collapsed {
+  width: 70px; /* Ancho reducido cuando está colapsado */
+  text-align: center; /* Centra el texto horizontalmente cuando está colapsado */
+
+}
+
+.collapse-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.content {
+  padding: 10px;
+}
+
+.icon {
+  font-size: 20px; /* Ajusta el tamaño del icono según sea necesario */
+}
