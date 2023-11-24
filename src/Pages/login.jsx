@@ -4,7 +4,7 @@ import { EyeFilledIcon } from "../Components/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "../Components/EyeSlashFilledIcon";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Components/authContext";
-const usersData = JSON.parse(import.meta.env.VITE_REACT_APP_USERS_DATA);
+const usersData = JSON.parse(import.meta.env.VITE_USERS_DATA);
 
 export default function Login() {
   const [isVisible, setIsVisible] = useState(false);
