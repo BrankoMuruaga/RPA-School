@@ -5,6 +5,7 @@ import { EyeSlashFilledIcon } from "../Components/EyeSlashFilledIcon";
 import { useNavigate } from "react-router-dom";
 // import { usersData } from "../Data/DATA-Users";
 const usersData = process.env.REACT_APP_USERS_DATA;
+usersData = JSON.parse(usersData);
 
 export default function Login() {
   const [isVisible, setIsVisible] = useState(false);
