@@ -3,13 +3,8 @@ import { Input, Button } from "@nextui-org/react";
 import { EyeFilledIcon } from "../Components/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "../Components/EyeSlashFilledIcon";
 import { useNavigate } from "react-router-dom";
-// import { REACT_APP_USERS_DATA } from "../Data/DATA-Users";
 import { useAuth } from "../Components/authContext";
-// let usersData = REACT_APP_USERS_DATA; //Dev
-let usersData = process.env.REACT_APP_USERS_DATA; //Prod
-console.log(usersData);
-usersData = JSON.parse(usersData);
-console.log(usersData);
+const usersData = JSON.parse(import.meta.env.VITE_REACT_APP_USERS_DATA);
 
 export default function Login() {
   const [isVisible, setIsVisible] = useState(false);
