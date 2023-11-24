@@ -7,7 +7,9 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Components/authContext";
 // let usersData = REACT_APP_USERS_DATA; //Dev
 let usersData = process.env.REACT_APP_USERS_DATA; //Prod
+console.log(usersData);
 usersData = JSON.parse(usersData);
+console.log(usersData);
 
 export default function Login() {
   const [isVisible, setIsVisible] = useState(false);
