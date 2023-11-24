@@ -4,7 +4,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { User } from "@nextui-org/react";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { Listbox, ListboxItem, ListboxSection } from "@nextui-org/react";
-import { itemsAside } from "./JSON-itemAside";
+import { itemsAside } from "../Data/DATA-itemAside";
 import { Link } from "react-router-dom";
 import "../css/Aside.css";
 

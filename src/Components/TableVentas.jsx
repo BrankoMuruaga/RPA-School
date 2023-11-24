@@ -9,7 +9,7 @@ import {
   Pagination,
   getKeyValue,
 } from "@nextui-org/react";
-import { data } from "./JSON-ventasMensuales";
+import { data } from "../Data/DATA-ventasMensuales";
 
 const columns = [
   "FECHA",

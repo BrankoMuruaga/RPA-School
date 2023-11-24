@@ -3,8 +3,10 @@ import { Input, Button } from "@nextui-org/react";
 import { EyeFilledIcon } from "../Components/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "../Components/EyeSlashFilledIcon";
 import { useNavigate } from "react-router-dom";
+// import { usersData } from "../Data/DATA-Users";
+const usersData = process.env.REACT_APP_USERS_DATA;
 
-export default function Login({ serUser }) {
+export default function Login() {
   const [isVisible, setIsVisible] = useState(false);
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
@@ -22,8 +24,11 @@ export default function Login({ serUser }) {
     }
 
     setError(false);
-    serUser(user); // Actualizar el estado del usuario si es necesario
-    navigate("/Inicio"); // Navegar a la página de inicio
+    if (usersData[user] && usersData[user].password === password) {
+      navigate("/Inicio");
+    } else {
+      setError(true);
+    }
   };
 
   return (
