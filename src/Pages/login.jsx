@@ -3,8 +3,10 @@ import { Input, Button } from "@nextui-org/react";
 import { EyeFilledIcon } from "../Components/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "../Components/EyeSlashFilledIcon";
 import { useNavigate } from "react-router-dom";
-// import { usersData } from "../Data/DATA-Users";
-const usersData = process.env.REACT_APP_USERS_DATA;
+import { REACT_APP_USERS_DATA } from "../Data/DATA-Users";
+import { useAuth } from "../Components/authContext";
+// let usersData = REACT_APP_USERS_DATA; //Dev
+let usersData = process.env.REACT_APP_USERS_DATA; //Prod
 usersData = JSON.parse(usersData);
 
 export default function Login() {
@@ -13,6 +15,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const toggleVisibility = () => setIsVisible(!isVisible);
 
@@ -26,14 +29,15 @@ export default function Login() {
 
     setError(false);
     if (usersData[user] && usersData[user].password === password) {
-      navigate("/Inicio");
+      login();
+      navigate("/private/Inicio");
     } else {
       setError(true);
     }
   };
 
   return (
-    <div className="container flex mx-auto h-screen justify-center items-center">
+    <div className="container flex w-screen h-screen justify-center items-center">
       <form
         className="flex flex-col items-center justify-center"
         onSubmit={handleSubmit}

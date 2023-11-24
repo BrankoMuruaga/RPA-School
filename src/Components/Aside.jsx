@@ -6,10 +6,12 @@ import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { Listbox, ListboxItem, ListboxSection } from "@nextui-org/react";
 import { itemsAside } from "../Data/DATA-itemAside";
 import { Link } from "react-router-dom";
+import { useAuth } from "../Components/authContext";
 import "../css/Aside.css";
 
 export default function Aside() {
   const [collapsed, setCollapsed] = useState(false);
+  const { logout } = useAuth();
 
   const toggleCollapse = () => {
     setCollapsed(!collapsed);
@@ -46,7 +48,7 @@ export default function Aside() {
           <ListboxSection showDivider>
             {itemsAside.map((item) => (
               <ListboxItem key={item.label}>
-                <Link to={`/${item.label}`}>
+                <Link to={`/private/${item.label}`}>
                   {!collapsed ? (
                     <>{item.label}</>
                   ) : (
@@ -59,7 +61,12 @@ export default function Aside() {
 
           {/* Este es el boton Logout */}
           <ListboxSection>
-            <ListboxItem key="logout" className="text-danger" color="danger">
+            <ListboxItem
+              key="logout"
+              className="text-danger"
+              color="danger"
+              onClick={logout}
+            >
               {!collapsed ? (
                 <>Log Out</>
               ) : (
