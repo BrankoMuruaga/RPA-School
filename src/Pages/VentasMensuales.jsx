@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Filtro from "../Components/Filtro";
 import TableVentas from "../Components/TableVentas";
-import Card from "../Components/TextArea";
+import Card from "../Components/Card";
 
 const VentasMensuales = () => {
   const [filtro, setFiltro] = useState({ fechaDesde: "", fechaHasta: "" });
