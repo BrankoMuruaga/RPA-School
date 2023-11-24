@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import { Navigate, createBrowserRouter } from "react-router-dom";
+import React from "react";
+import { createBrowserRouter } from "react-router-dom";
 import VentasMensuales from "./VentasMensuales";
 import Login from "./login";
-import Aside from "../Components/Aside";
 import PublicRoute from "./PublicRoute";
 import PrivateRoute from "./PrivateRoute";
 import { LOGIN, PRIVATE, INICIO, REGISTRO } from "../Data/paths";
