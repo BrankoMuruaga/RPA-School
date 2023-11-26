@@ -3,10 +3,12 @@ import { Input, Button } from "@nextui-org/react";
 import { EyeFilledIcon } from "../Components/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "../Components/EyeSlashFilledIcon";
 import { useNavigate } from "react-router-dom";
-import { VITE_USERS_DATA } from "../Data/DATA-Users";
+
 import { useAuth } from "../Components/authContext";
-let usersData = JSON.parse(VITE_USERS_DATA); //Dev
-// const usersData = JSON.parse(import.meta.env.VITE_REACT_APP_USERS_DATA);
+// let usersData = JSON.parse(VITE_USERS_DATA); //Dev
+const usersData =
+  JSON.parse(import.meta.env.VITE_USERS_DATA) ||
+  JSON.parse(process.env.VITE_USERS_DATA);
 
 export default function Login() {
   const [isVisible, setIsVisible] = useState(false);

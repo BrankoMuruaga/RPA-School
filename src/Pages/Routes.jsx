@@ -22,11 +22,11 @@ export const RoutesApp = createBrowserRouter([
     element: <PrivateRoute />,
     children: [
       {
-        path: INICIO, // Ruta relativa a /private/Aside
+        path: INICIO,
         element: <h1>Home</h1>,
       },
       {
-        path: REGISTRO, // Ruta relativa a /private/Aside
+        path: REGISTRO,
         element: <VentasMensuales />,
       },
     ],
