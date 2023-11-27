@@ -8,6 +8,7 @@ import { itemsAside } from "../Data/DATA-itemAside";
 import { Link } from "react-router-dom";
 import { useAuth } from "../Components/authContext";
 import "../css/Aside.css";
+import { PRIVATE } from "../Data/paths";
 
 export default function Aside() {
   const [collapsed, setCollapsed] = useState(false);
@@ -25,7 +26,7 @@ export default function Aside() {
       <button onClick={toggleCollapse} className="collapse-button">
         <FontAwesomeIcon icon={faBars} />
       </button>
-      <div className="content">
+      <div className="content ml-1">
         {!collapsed ? (
           <User
             name="Usuario"
@@ -48,7 +49,7 @@ export default function Aside() {
           <ListboxSection showDivider>
             {itemsAside.map((item) => (
               <ListboxItem key={item.label}>
-                <Link to={`/private/${item.label}`}>
+                <Link to={PRIVATE + `/${item.label}`}>
                   {!collapsed ? (
                     <>{item.label}</>
                   ) : (
