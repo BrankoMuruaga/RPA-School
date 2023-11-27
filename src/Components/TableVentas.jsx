@@ -56,14 +56,13 @@ const TableVentas = ({ filtro: filtroProps }) => {
 
   return (
     <Table
-      aria-label="Tabla de ejemplo con paginación del lado del cliente"
       bottomContent={
         <div className="flex w-full justify-center">
           <Pagination
             isCompact
             showControls
             showShadow
-            color="secondary"
+            color="default"
             page={page}
             total={pages}
             onChange={(page) => setPage(page)}

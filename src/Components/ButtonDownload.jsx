@@ -1,11 +1,12 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons"; // Asegúrate de tener FontAwesome instalado
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 const DownloadButton = ({ link, children }) => {
   const handleDownload = () => {
     {
-      /*El link es asi "/documento.xlsx" */
+      /*El link es asi "/documento.xlsx" y se deja en la carpeta Public,
+       este debe tener el mismo nombre que la seccion en el aside */
     }
     link = "/" + link + ".xlsx";
     const aTag = document.createElement("a");

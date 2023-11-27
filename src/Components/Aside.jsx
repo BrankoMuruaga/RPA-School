@@ -40,13 +40,13 @@ export default function Aside() {
             name="Admin"
             description="Administrador"
             avatarProps={{
-              src: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+              name: "A",
             }}
           />
         ) : (
           <User
             avatarProps={{
-              src: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+              name: "A",
             }}
           />
         )}
