@@ -1,3 +1,4 @@
+// aside.jsx
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -6,16 +7,23 @@ import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { Listbox, ListboxItem, ListboxSection } from "@nextui-org/react";
 import { itemsAside } from "../Data/DATA-itemAside";
 import { Link } from "react-router-dom";
-import { useAuth } from "../Components/authContext";
+import { useAuth } from "../Context/authContext";
 import "../css/Aside.css";
 import { PRIVATE } from "../Data/paths";
+import DownloadButton from "./ButtonDownload";
+import { useDownloadFile } from "../Context/downloadContext";
 
 export default function Aside() {
   const [collapsed, setCollapsed] = useState(false);
   const { logout } = useAuth();
+  const { downloadFile, setDownloadFile } = useDownloadFile(); // Utiliza DownloadContext
 
   const toggleCollapse = () => {
     setCollapsed(!collapsed);
+  };
+
+  const handleItemSelected = (itemLabel) => {
+    setDownloadFile(itemLabel); // Establece el valor en el contexto
   };
 
   return (
@@ -29,8 +37,8 @@ export default function Aside() {
       <div className="content ml-1">
         {!collapsed ? (
           <User
-            name="Usuario"
-            description="Alumno"
+            name="Admin"
+            description="Administrador"
             avatarProps={{
               src: "https://i.pravatar.cc/150?u=a04258114e29026702d",
             }}
@@ -49,7 +57,10 @@ export default function Aside() {
           <ListboxSection showDivider>
             {itemsAside.map((item) => (
               <ListboxItem key={item.label}>
-                <Link to={PRIVATE + `/${item.label}`}>
+                <Link
+                  to={PRIVATE + `/${item.label}`}
+                  onClick={() => handleItemSelected(item.label)}
+                >
                   {!collapsed ? (
                     <>{item.label}</>
                   ) : (
@@ -60,8 +71,8 @@ export default function Aside() {
             ))}
           </ListboxSection>
 
-          {/* Este es el boton Logout */}
-          <ListboxSection>
+          {/* Este es el botón Logout */}
+          <ListboxSection showDivider>
             <ListboxItem
               key="logout"
               className="text-danger"
@@ -73,6 +84,15 @@ export default function Aside() {
               ) : (
                 <FontAwesomeIcon icon={faSignOutAlt} className="icon" />
               )}
+            </ListboxItem>
+          </ListboxSection>
+
+          {/* Agregar el botón de descarga con el valor del contexto */}
+          <ListboxSection>
+            <ListboxItem>
+              <DownloadButton link={downloadFile}>
+                {!collapsed ? <>Descargar archivo</> : <></>}
+              </DownloadButton>
             </ListboxItem>
           </ListboxSection>
         </Listbox>

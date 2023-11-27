@@ -1,4 +1,8 @@
-import { faFileAlt, faHomeAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFileAlt,
+  faHomeAlt,
+  faPerson,
+} from "@fortawesome/free-solid-svg-icons";
 
 export const itemsAside = [
   {
@@ -8,5 +12,9 @@ export const itemsAside = [
   {
     label: "Registro",
     icon: faFileAlt,
+  },
+  {
+    label: "Empleados",
+    icon: faPerson,
   },
 ];

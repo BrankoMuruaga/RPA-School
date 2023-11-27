@@ -3,7 +3,7 @@ import { Input, Button } from "@nextui-org/react";
 import { EyeFilledIcon } from "../Components/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "../Components/EyeSlashFilledIcon";
 import { Navigate, useNavigate } from "react-router-dom";
-import { useAuth } from "../Components/authContext";
+import { useAuth } from "../Context/authContext.jsx";
 import { INICIO } from "../Data/paths";
 const usersData =
   JSON.parse(import.meta.env.VITE_USERS_DATA) ||

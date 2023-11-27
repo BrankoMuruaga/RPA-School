@@ -6,7 +6,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   let storedIsAuthenticated;
   try {
-    storedIsAuthenticated = localStorage.getItem("isAuthenticated");
+    storedIsAuthenticated = sessionStorage.getItem("isAuthenticated");
     storedIsAuthenticated = storedIsAuthenticated
       ? JSON.parse(storedIsAuthenticated)
       : false;
@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
 
   // Actualiza el almacenamiento local cuando cambia el estado de autenticación
   useEffect(() => {
-    localStorage.setItem("isAuthenticated", JSON.stringify(isAuthenticated));
+    sessionStorage.setItem("isAuthenticated", JSON.stringify(isAuthenticated));
   }, [isAuthenticated]);
 
   const login = () => {

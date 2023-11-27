@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { LOGIN } from "../Data/paths";
-import { useAuth } from "../Components/authContext";
+import { useAuth } from "../Context/authContext.jsx";
 import Aside from "../Components/Aside";
 
 const PrivateRoute = () => {
