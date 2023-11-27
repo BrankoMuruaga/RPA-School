@@ -43,7 +43,7 @@ export default function Aside() {
         )}
       </div>
 
-      <div>
+      <>
         <Listbox items={itemsAside}>
           <ListboxSection showDivider>
             {itemsAside.map((item) => (
@@ -75,7 +75,7 @@ export default function Aside() {
             </ListboxItem>
           </ListboxSection>
         </Listbox>
-      </div>
+      </>
     </div>
   );
 }

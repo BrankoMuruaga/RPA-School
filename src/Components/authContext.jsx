@@ -23,7 +23,6 @@ export const AuthProvider = ({ children }) => {
   }, [isAuthenticated]);
 
   const login = () => {
-    // Lógica de autenticación (verifica el usuario y la contraseña)
     setIsAuthenticated(true);
   };
 
