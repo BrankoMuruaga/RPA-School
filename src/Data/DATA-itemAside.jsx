@@ -10,6 +10,10 @@ export const itemsAside = [
     icon: faHomeAlt,
   },
   {
+    label: "Numero-Aleatoreo",
+    icon: faPerson,
+  },
+  {
     label: "Registro",
     icon: faFileAlt,
   },

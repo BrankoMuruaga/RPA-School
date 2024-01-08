@@ -1,5 +1,6 @@
 import React from "react";
+import FormularioIngresoEmpleado from "../Components/FormularioDeRegistro";
 
 export default function Empleados() {
-  return <div>Ingreso de Empleados</div>;
+  return <FormularioIngresoEmpleado></FormularioIngresoEmpleado>;
 }
